@@ -1,5 +1,7 @@
-export function Divider() {
+import './Divider.css';
+
+export function Divider(props) {
     return (
-        <hr className={classes.divider}/>
+        <hr className={'divider'} style={{backgroundColor: props.color}}/>
     )
 }
