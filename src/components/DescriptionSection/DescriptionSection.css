@@ -1,0 +1,33 @@
+.description-container {
+    background-color: #ebedec;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.img-container {
+    background-color: darkslategray;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    width: 100%;
+    height: 80%;
+}
+
+.description-text-container {
+    position: absolute;
+    top: 40%;
+    width: 90%;
+    height: 50%;
+    background-color: #000;
+    opacity: .2;
+    z-index: 2;
+    padding: 40px 80px;
+
+}
+
+.description-text {
+    margin: 0;
+    color: #fff;
+    opacity: 100%;
+}
