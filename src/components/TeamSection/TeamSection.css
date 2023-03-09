@@ -1,0 +1,49 @@
+.team-section-container {
+    background-color: #ebedec;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.team-header {
+    font-size: 200px;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+
+.outer-team-img-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 35%;
+}
+
+.team-img-container {
+    position: relative;
+}
+
+.blue {
+    position: absolute;
+    top: -5%;
+    left: 15%;
+    background-color: #1e5ea3;
+    width: 90%;
+    height: 7.5%;
+    z-index: 0;
+}
+
+.team-img-container img {
+    width: 100%;
+    z-index: 1;
+}
+
+.yellow {
+    position: absolute;
+    top: 15%;
+    left: -5%;
+    background-color: #efc61e;
+    width: 7.5%;
+    height: 90%;
+    z-index: 0;
+}
