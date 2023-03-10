@@ -21,6 +21,7 @@
 
 .team-img-container {
     position: relative;
+    width: 100%;
 }
 
 .blue {
@@ -35,7 +36,8 @@
 
 .team-img-container img {
     width: 100%;
-    z-index: 1;
+    z-index: 20;
+    position: relative;;
 }
 
 .yellow {
@@ -43,7 +45,99 @@
     top: 15%;
     left: -5%;
     background-color: #efc61e;
-    width: 7.5%;
+    width: 100%;
     height: 90%;
     z-index: 0;
 }
+
+.absolute {
+    position: absolute;
+    top: 50%;
+    left: 7.5%;
+    width: 55%;
+}
+
+.text-description-group {
+    position: relative;
+    width: 100%;
+}
+
+.team-text-container {
+    position: absolute;
+    background-color: rgba(51, 51, 51, 0.4);
+    z-index: 21;
+    padding: 40px 80px;
+}
+
+.team-text {
+    color: #fff;
+}
+
+.closed {
+    display: none;
+}
+
+.cross-container {
+    position: absolute;
+    z-index: 22;
+    transform: translateY(-50%);
+    right: 0;
+    cursor: pointer;
+}
+
+.relative {
+    position: relative;
+}
+
+.cross-y {
+    background-color: #fff;
+    width: 10px;
+    height: 100px;
+}
+
+.cross-x {
+    position: absolute;
+    background-color: #fff;
+    width: 100px;
+    height: 10px;
+    top: 50%;
+    transform: translateX(-45%);
+}
+
+@keyframes cross-open-y {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(50%);
+    }
+}
+
+@keyframes cross-close-y {
+    from {
+        transform: translateY(50%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes cross-open-x {
+    from {
+        transform: translateX(-45%);
+    }
+    to {
+        transform: translateX(-90%);
+
+    }
+}
+
+@keyframes cross-close-x {
+    from {
+        transform: translateX(-90%);
+    }
+    to {
+        transform: translateX(-45%);
+    }
+}
+
