@@ -52,6 +52,7 @@
 
 .disabled p {
     margin: 0;
+    letter-spacing: 5px;
 }
 
 .disabled .coming-soon{
