@@ -8,13 +8,13 @@ import {ExperienceSection} from "./components/ExperienceSection/ExperienceSectio
 function App() {
     return (
         <div>
-            <Divider color={'#efc61e'}/>
+            <Divider color={'#1d5eaf'}/>
             <DescriptionSection/>
-            <Divider color={'#1d5eaf'}/>
-            <ProjectSection/>
             <Divider color={'#efc61e'}/>
-            <ExperienceSection/>
+            <ProjectSection/>
             <Divider color={'#1d5eaf'}/>
+            <ExperienceSection/>
+            <Divider color={'#efc61e'}/>
             <TeamSection/>
         </div>
     );
