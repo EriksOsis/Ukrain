@@ -1,0 +1,52 @@
+.carousel-container {
+    width: 60%;
+    height: 600px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.carousel {
+    z-index: 20;
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.carousel-panel {
+    height: 100%;
+    width: 10%;
+    position: absolute;
+    top: 0;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.carousel-panel:hover {
+    background-color: #fff;
+    opacity: .4;
+}
+
+.carousel-panel:active {
+    opacity: .6;
+}
+
+.carousel img.slide-right {
+    transform: translateX(100%);
+}
+
+.carousel-image.slide-left {
+    transform: translateX(-100%);
+}

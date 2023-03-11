@@ -4,6 +4,7 @@ import {Divider} from "./components/UI/Divider";
 import {TeamSection} from "./components/TeamSection/TeamSection";
 import {ProjectSection} from "./components/ProjectSection/ProjectSection";
 import {ExperienceSection} from "./components/ExperienceSection/ExperienceSection";
+import ImageCarousel from "./components/ImageCarouselSection/ImageCarousel";
 
 function App() {
     return (
@@ -14,7 +15,7 @@ function App() {
             <ProjectSection/>
             <Divider color={'#1d5eaf'}/>
             <ExperienceSection/>
-            <Divider color={'#efc61e'}/>
+            <ImageCarousel/>
             <TeamSection/>
         </div>
     );
