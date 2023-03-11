@@ -3,6 +3,7 @@ import {DescriptionSection} from "./components/DescriptionSection/DescriptionSec
 import {Divider} from "./components/UI/Divider";
 import {TeamSection} from "./components/TeamSection/TeamSection";
 import {ProjectSection} from "./components/ProjectSection/ProjectSection";
+import {ExperienceSection} from "./components/ExperienceSection/ExperienceSection";
 
 function App() {
     return (
@@ -12,8 +13,9 @@ function App() {
             <Divider color={'#1d5eaf'}/>
             <ProjectSection/>
             <Divider color={'#efc61e'}/>
-            <TeamSection/>
+            <ExperienceSection/>
             <Divider color={'#1d5eaf'}/>
+            <TeamSection/>
         </div>
     );
 }

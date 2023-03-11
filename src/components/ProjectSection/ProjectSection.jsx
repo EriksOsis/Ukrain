@@ -1,5 +1,8 @@
 import './ProjectSection.css';
 import {DonationCard} from "./DonationCard";
+import equipmentImg from './img.png';
+import rebuildImg from './img_1.png';
+import medicineImg from './img_2.png';
 
 export function ProjectSection() {
     return (
@@ -15,9 +18,9 @@ export function ProjectSection() {
                 </p>
             </div>
             <div className={'donations-container'}>
-                <DonationCard heading={'MEDICINE'}/>
-                <DonationCard heading={'EQUIPMENT'}/>
-                <DonationCard heading={'REBUILD'}/>
+                <DonationCard heading={'MEDICINE'} img={medicineImg}/>
+                <DonationCard heading={'EQUIPMENT'} img={equipmentImg}/>
+                <DonationCard heading={'REBUILD'} img={rebuildImg}/>
             </div>
         </section>
     )

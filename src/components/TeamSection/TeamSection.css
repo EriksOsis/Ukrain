@@ -1,15 +1,16 @@
 .team-section-container {
-    background-color: #ebedec;
     position: relative;
     width: 100vw;
     min-height: 100vh;
 }
 
 .team-header {
-    font-size: 200px;
+    font-size: 250px;
     position: absolute;
     top: 10%;
-    left: 5%;
+    left: 12.5%;
+    z-index: 50;
+    font-weight: 400;
 }
 
 .outer-team-img-container {
@@ -66,7 +67,7 @@
     position: absolute;
     background-color: rgba(51, 51, 51, 0.6);
     z-index: 21;
-    padding: 40px 80px;
+    padding: 20px 40px;
 }
 
 .team-text {
@@ -100,7 +101,7 @@
     background-color: #fff;
     width: 100px;
     height: 10px;
-    top: 50%;
+    top: 47.5%;
     transform: translateX(-45%);
 }
 
