@@ -13,21 +13,22 @@
 .experience-heading-container {
     transform: translateX(-7.5%);
     line-height: 250px;
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
 .experience-heading-container h1 {
-    font-size: 275px;
+    font-size: 320px;
     font-weight: 400;
+    letter-spacing: 10px;
 }
 
 .experience-text-container {
     position: absolute;
-    top: 32.5%;
-    left: 55%;
+    top: 30%;
+    left: 53%;
 }
 
 .experience-text {
-    font-size: 26px;
+    font-size: 28px;
 }
 
