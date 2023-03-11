@@ -3,6 +3,8 @@
     position: relative;
 }
 
+
+
 .heading-container {
     padding: 50px 35px;
     z-index: 10;
@@ -16,7 +18,7 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    background: linear-gradient(to right, #efc61e, #efc61e 50%, #fff 50%);
+    background: linear-gradient(to right, #fed500, #fed500 50%, #ededed 50%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -38,7 +40,8 @@
 
 .heading-container-open {
     height: 100%;
-    background-color: rgba(51, 51, 51, 0.4);
+    background-color: #0d0d0d;
+    opacity: 0.55;
 }
 
 .donation-img-container {
@@ -54,6 +57,85 @@
     height: 0;
     transform: translateX(-25%);
 }
+
+
+
+
+.donation {
+    max-width: 33%;
+    flex: 0 0 33%;
+    position: relative;
+    overflow: hidden;
+}
+
+.donation__title {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.donation__title {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    
+}
+
+.donation__title:hover {
+    cursor: pointer;
+}
+
+.donation__title h2 {
+    font-size: 4vw;
+    background: linear-gradient(to right, #fed500, #fed500 50%, #ededed 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease-out;
+    z-index: 2;
+}
+
+.donation__bg {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    width: 0%;
+    height: 100%;
+    background-color: #0d0d0d;
+    opacity: 0.55;
+}
+
+
+.donation__image {
+    width: 100%;
+    padding-top: 100%;
+    transform: translateY(-100%);
+}
+/* .donation__image::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #0d0d0d;
+} */
 
 @keyframes container-open {
     from {
@@ -75,7 +157,7 @@
 
 @keyframes img-open {
     from {
-        height: 0;
+        height: 0%;
     }
     to {
         height: 100%;
