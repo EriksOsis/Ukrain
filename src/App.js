@@ -7,6 +7,7 @@ import {ExperienceSection} from "./components/ExperienceSection/ExperienceSectio
 import ImageCarousel from "./components/ImageCarouselSection/ImageCarousel";
 import {TopMenu} from "./components/TopMenu/TopMenu";
 import {Footer} from "./components/Footer/Footer";
+import {FAQ} from "./components/FAQ/FAQ";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
             <ExperienceSection/>
             <ImageCarousel/>
             <TeamSection/>
+            <FAQ/>
             <Divider color={'#efc61e'}/>
             <Footer/>
         </div>
