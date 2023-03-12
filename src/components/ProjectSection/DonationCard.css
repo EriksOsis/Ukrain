@@ -68,6 +68,13 @@
     overflow: hidden;
 }
 
+.donation:nth-child(2) .donation__title {
+    border-left: 2px solid #ededed;
+}
+.donation:nth-child(3) .donation__title {
+    border-left: 2px solid #ededed;
+}
+
 .donation__title {
     position: absolute;
     top: 0px;
@@ -125,7 +132,7 @@
 .donation__image {
     width: 100%;
     padding-top: 100%;
-    transform: translateY(-100%);
+    transform: translateY(-101%);
 }
 /* .donation__image::after {
     content: '';

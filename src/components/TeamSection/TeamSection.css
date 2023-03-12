@@ -18,6 +18,7 @@
     top: 20%;
     left: 45%;
     width: 45%;
+    cursor: pointer;
 }
 
 .team-img-container {
@@ -27,12 +28,13 @@
 
 .blue {
     position: absolute;
-    top: -5%;
-    left: 15%;
+    left: 11%;
+    bottom: 90%;
     background-color: #1e5ea3;
     width: 90%;
-    height: 7.5%;
+    height: 11.5%;
     z-index: 0;
+    transition: width 0.34s ease, height 0.34s ease;
 }
 
 .team-img-container img {
@@ -43,12 +45,23 @@
 
 .yellow {
     position: absolute;
-    top: 15%;
-    left: -5%;
+    top: 11%;
+    right: 10.8%;
     background-color: #fed500;
-    width: 100%;
+    width: 90%;
     height: 90%;
+    transition: width 0.34s ease, height 0.34s ease;
     z-index: 0;
+}
+
+.outer-team-img-container:hover .yellow {
+    width: 92%;
+    height: 92%;
+}
+
+.outer-team-img-container:hover .blue {
+    width: 92%;
+    height: 13.5%;
 }
 
 .absolute {
@@ -92,7 +105,7 @@
 
 .cross-y {
     background-color: #ededed;
-    width: 10px;
+    width: 3px;
     height: 100px;
 }
 
@@ -100,9 +113,9 @@
     position: absolute;
     background-color: #ededed;
     width: 100px;
-    height: 10px;
-    top: 47.5%;
-    transform: translateX(-45%);
+    height: 3px;
+    top: 50%;
+    transform: translateX(-50%);
 }
 
 @keyframes cross-open-y {
@@ -125,20 +138,20 @@
 
 @keyframes cross-open-x {
     from {
-        transform: translateX(-45%);
+        transform: translateX(-50%);
     }
     to {
-        transform: translateX(-90%);
+        transform: translateX(-100%);
 
     }
 }
 
 @keyframes cross-close-x {
     from {
-        transform: translateX(-90%);
+        transform: translateX(-100%);
     }
     to {
-        transform: translateX(-45%);
+        transform: translateX(-50%);
     }
 }
 

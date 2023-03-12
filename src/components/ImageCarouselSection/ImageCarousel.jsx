@@ -8,7 +8,7 @@ import five from './peter_05.jpg';
 import six from './peter_06.jpg';
 import seven from './peter_07.jpg';
 
-const images = [one, two, three, four, five, six, seven];
+const images = [three, five, one, two, four, six, seven];
 
 const ImageCarousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);

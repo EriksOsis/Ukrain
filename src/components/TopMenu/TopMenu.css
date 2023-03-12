@@ -7,12 +7,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-height: 60px;
+}
+
+.logo {
+    height: 100%;
+}
+
+.lang-select span {
+    margin-left: 9px;
 }
 
 .left-side {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
+    height: 60px;
 }
 
 .logo-heading {

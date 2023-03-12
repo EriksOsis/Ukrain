@@ -10,7 +10,6 @@ export function DonationCard(props) {
     // const [gsapTL, setGsapTL] = useState(gsap.timeline());
 
     const tl = gsap.timeline({paused: false})
-
     let init = false
 
     // const parent = this
@@ -37,9 +36,7 @@ export function DonationCard(props) {
         }
 
         tl.reversed(false)
-
         console.log(bgBox);
-
         
     };
 

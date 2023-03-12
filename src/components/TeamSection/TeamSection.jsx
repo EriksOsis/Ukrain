@@ -1,12 +1,37 @@
 import './TeamSection.css';
 import peterisImg from './img.png';
 import {useState} from "react";
+import { gsap } from "gsap";
 
 export function TeamSection() {
     const [textClasses, setTextClasses] = useState('team-text-container  closed');
     const [testIsOpen, setTextIsOpen] = useState(false);
     const [crossAnimationY, setCrossAnimationY] = useState({});
     const [crossAnimationX, setCrossAnimationX] = useState({});
+
+    const tl = gsap.timeline({paused: false})
+
+    let init = false
+
+    const onEnter = ({ currentTarget }) => {
+        const parent = currentTarget
+        const x = parent.querySelector(".cross-x")
+        const y = parent.querySelector(".cross-y")
+
+        if (!init) {
+            // tl.to(bgBox, { width: '100%', duration: 0.1 })
+            init = true
+        }
+
+        tl.reversed(false)
+        
+    };
+
+    const onLeave = ({ currentTarget }) => {
+        tl.reversed(!tl.reversed())
+        console.log("stuff");
+        // gsap.to(currentTarget, { backgroundColor: "#28a92b", scale: 1 });
+    };
 
     function textHandler() {
         setTextIsOpen(!testIsOpen);
@@ -40,7 +65,7 @@ export function TeamSection() {
     return (
         <section className={'team-section-container'}>
             <h1 className={'team-header'}>TEAM</h1>
-            <div className={'outer-team-img-container'}>
+            <div className={'outer-team-img-container'} onClick={textHandler} onMouseEnter={onEnter} onMouseLeave={onLeave}>
                 <div className={'team-img-container'}>
                     <div className={'blue'}/>
 
@@ -50,7 +75,7 @@ export function TeamSection() {
             </div>
             <div className={'absolute'}>
                 <div className={'text-description-group'}>
-                    <div className={'cross-container'} onClick={textHandler}>
+                    <div className={'cross-container'}>
                         <div className={'relative'}>
                             <div className={'cross-y'} style={crossAnimationY}/>
                             <div className={'cross-x'} style={crossAnimationX}/>
