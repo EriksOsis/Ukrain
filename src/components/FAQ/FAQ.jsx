@@ -1,18 +1,34 @@
 import './FAQ.css';
-import {useState} from "react";
+import { useState } from "react";
+import { gsap } from "gsap";
 
 export function FAQ() {
     const [answerIsOpen, setAnswerIsOpen] = useState(false);
 
     function answerHandler() {
         setAnswerIsOpen(!answerIsOpen);
+        if (!answerIsOpen) {
+            gsap.to(".blue-line", { translateY: "0%" });
+        } else {
+            gsap.to(".blue-line", { translateY: "-100%" });
+        }
+    }
+
+    const hoverEnter = () => {
+        gsap.to(".yellow-line", { translateX: "0px" });
+    }
+
+    const hoverLeave = () => {
+        gsap.to(".yellow-line", { translateX: "-3px" });
     }
 
     return (
         <section className={'faq-container'}>
             <div className={'faq'}>
-                <div className={'question-container'} onClick={answerHandler}>
-                    <div className={'yellow-line'}/>
+                <div className={'question-container'} onClick={answerHandler} onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+                    <div className={'yellow-line'}>
+                        <div className="blue-line"></div>
+                    </div>
                     <p className={'question'}>Is my payment card data in safe hands?</p>
                 </div>
                 <div className={`answer-container ${answerIsOpen ? 'open' : 'closed'}`}>
@@ -25,6 +41,8 @@ export function FAQ() {
                         laboriosam provident ullam.
                     </p>
                 </div>
+
+                
             </div>
         </section>
     )

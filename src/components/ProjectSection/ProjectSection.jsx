@@ -1,8 +1,9 @@
 import './ProjectSection.css';
 import {DonationCard} from "./DonationCard";
-import equipmentImg from './img.png';
-import rebuildImg from './img_1.png';
-import medicineImg from './img_2.png';
+import equipmentImg from './equipment.png';
+import rebuildImg from './rebuild.png';
+import medicineImg from './medicine.png';
+import { FinishedProjects } from '../FinishedProjects/FinishedProjects';
 
 export function ProjectSection() {
     return (
@@ -16,6 +17,7 @@ export function ProjectSection() {
                     three necessities so each one <br/>
                     of our donations can find what suits best
                 </p>
+                <FinishedProjects/>
             </div>
             <div className={'donations-container'}>
                 <DonationCard heading={'MEDICINE'} img={medicineImg}/>

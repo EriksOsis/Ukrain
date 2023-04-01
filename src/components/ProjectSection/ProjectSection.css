@@ -14,9 +14,15 @@
 
 .project-text-container {
     margin-left: 70px;
+    display: flex;
+    flex-direction: row;
 }
 
 .project-text {
+    /* max-width: 80%;
+    flex: 0 0 80%; */
+    width: fit-content;
+    max-width: fit-content;
     font-size: 20px;
     line-height: 25px;
     letter-spacing: 2px;

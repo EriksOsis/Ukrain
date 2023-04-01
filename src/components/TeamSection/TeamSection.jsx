@@ -1,19 +1,51 @@
 import './TeamSection.css';
-import peterisImg from './img.png';
-import {useState} from "react";
+import peterisImg from './peter.png';
+import {useState, useEffect, useRef} from "react";
 import { gsap } from "gsap";
 
 export function TeamSection() {
+
+    const ref = useRef();
+
     const [textClasses, setTextClasses] = useState('team-text-container  closed');
-    const [testIsOpen, setTextIsOpen] = useState(false);
+    const [textIsOpen, setTextIsOpen] = useState(false);
+    const [mouseOnTeamBox, setMouseOnTeamBox] = useState(false);
     const [crossAnimationY, setCrossAnimationY] = useState({});
     const [crossAnimationX, setCrossAnimationX] = useState({});
+
+    const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+            closeText()
+        }
+    };
+
+    const handleClickInside = () => {
+    };
+
+    useEffect(() => {
+        window.addEventListener('mousedown', handleClickOutside);
+        return () => {
+          window.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     const tl = gsap.timeline({paused: false})
 
     let init = false
 
+    // useEffect(() => {
+    //      document.getElementById('root').addEventListener('click', () => {
+    //         closeText()
+    //      } );
+    
+    //     return () => {
+    //         // document.getElementById('root').removeEventListener('click', closeText);
+    //     };
+    // }, []);
+
     const onEnter = ({ currentTarget }) => {
+        setMouseOnTeamBox(false)
+        console.log("mouseInBox:",mouseOnTeamBox);
         const parent = currentTarget
         const x = parent.querySelector(".cross-x")
         const y = parent.querySelector(".cross-y")
@@ -28,26 +60,14 @@ export function TeamSection() {
     };
 
     const onLeave = ({ currentTarget }) => {
+        setMouseOnTeamBox(true)
+        console.log("mouseInBox:",mouseOnTeamBox);
         tl.reversed(!tl.reversed())
-        console.log("stuff");
-        // gsap.to(currentTarget, { backgroundColor: "#28a92b", scale: 1 });
     };
 
-    function textHandler() {
-        setTextIsOpen(!testIsOpen);
-        if (!testIsOpen) {
-            setTextClasses('team-text-container');
-            setCrossAnimationY({
-                animationName: 'cross-open-y',
-                animationDuration: '.3s',
-                animationFillMode: 'forwards'
-            });
-            setCrossAnimationX({
-                animationName: 'cross-open-x',
-                animationDuration: '.3s',
-                animationFillMode: 'forwards'
-            });
-        } else if (testIsOpen) {
+    const toggleText = () => {
+        console.log("text is open", textIsOpen);
+        if (textIsOpen) {
             setTextClasses('team-text-container closed');
             setCrossAnimationY({
                 animationName: 'cross-close-y',
@@ -59,13 +79,48 @@ export function TeamSection() {
                 animationDuration: '.3s',
                 animationFillMode: 'forwards'
             });
+        } else if (!textIsOpen) {
+            setTextClasses('team-text-container');
+            setCrossAnimationY({
+                animationName: 'cross-open-y',
+                animationDuration: '.3s',
+                animationFillMode: 'forwards'
+            });
+            setCrossAnimationX({
+                animationName: 'cross-open-x',
+                animationDuration: '.3s',
+                animationFillMode: 'forwards'
+            });
+
+            
         }
+        setTextIsOpen(!textIsOpen);
+        console.log(textIsOpen);
+
+    }
+
+    const closeText = () => {
+        if (!textIsOpen) {
+            setTextClasses('team-text-container closed');
+            setCrossAnimationY({
+                animationName: 'cross-close-y',
+                animationDuration: '.3s',
+                animationFillMode: 'forwards'
+            });
+            setCrossAnimationX({
+                animationName: 'cross-close-x',
+                animationDuration: '.3s',
+                animationFillMode: 'forwards'
+            });
+            setTextIsOpen(false)
+        }
+       
     }
 
     return (
         <section className={'team-section-container'}>
             <h1 className={'team-header'}>TEAM</h1>
-            <div className={'outer-team-img-container'} onClick={textHandler} onMouseEnter={onEnter} onMouseLeave={onLeave}>
+            <div className={'outer-team-img-container'} ref={ref} onClick={toggleText} onMouseEnter={onEnter} onMouseLeave={onLeave}>
                 <div className={'team-img-container'}>
                     <div className={'blue'}/>
 

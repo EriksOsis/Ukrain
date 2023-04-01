@@ -1,0 +1,13 @@
+.finished-projects-container {
+    margin-left: 9vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
+
+.finished-projects-container p {
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0px;
+}

@@ -1,5 +1,5 @@
 import './DescriptionSection.css';
-import warImg from './img_1.png';
+import warImg from './desc_img.png';
 
 export function DescriptionSection() {
     return (

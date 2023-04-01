@@ -18,18 +18,22 @@
 }
 
 .experience-heading-container h1 {
-    font-size: 320px;
+    font-size: 25vw;
     font-weight: 400;
     letter-spacing: 10px;
+    line-height: 29.1vw;
 }
 
 .experience-text-container {
     position: absolute;
-    top: 34%;
-    left: 53%;
+    top: 42%;
+    /* left: 53%; */
+    right: -74px;
 }
 
 .experience-text {
-    font-size: 28px;
+    /* font-size: 28px; */
+    font-size: 1.9vw;
+    line-height: 2vw;
 }
 
