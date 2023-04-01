@@ -7,8 +7,8 @@ export function TopMenu() {
         <section className={'menu-container'}>
 
             <div className={'left-side'}>
-
-                <img className='logo' src={logo} alt="" />
+                <a href="/"><img className='logo' src={logo} alt="" /></a>
+                
 
             </div>
             <div className={'right-side'}>

@@ -41,6 +41,7 @@
 .answer-container {
     border-top: #3a3a3a 1px solid;
     padding: 20px;
+    padding-right: 90px;
     /* position: absolute; */
     /* top: 0px; */
 }

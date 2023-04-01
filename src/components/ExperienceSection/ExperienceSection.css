@@ -14,26 +14,26 @@
 .experience-heading-container {
     transform: translateX(-7.5%);
     line-height: 250px;
-    padding-top: 150px;
+    padding-top: 12vw;
 }
 
 .experience-heading-container h1 {
-    font-size: 25vw;
+    font-size: 21vw;
     font-weight: 400;
     letter-spacing: 10px;
-    line-height: 21.1vw;
+    line-height: 19.1vw;
 }
 
 .experience-text-container {
     position: absolute;
-    top: 42%;
+    top: 42vw;
     /* left: 53%; */
-    right: -74px;
+    right: 4vw;
 }
 
 .experience-text {
     /* font-size: 28px; */
-    font-size: 1.9vw;
-    line-height: 2vw;
+    font-size: 1.5vw;
+    line-height: 1.9vw;
 }
 
