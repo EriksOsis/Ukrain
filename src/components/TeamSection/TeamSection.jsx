@@ -1,13 +1,15 @@
 import './TeamSection.css';
 import peterisImg from './peter.png';
-import {useState, useEffect, useRef} from "react";
+import {useState, useEffect, useLayoutEffect, useRef} from "react";
 import { gsap } from "gsap";
 
 export function TeamSection() {
 
     const ref = useRef();
+    const textModal = useRef();
 
-    const [textClasses, setTextClasses] = useState('team-text-container  closed');
+    const [marginBottom, setMarginBottom] = useState(0);
+    const [textClasses, setTextClasses] = useState('team-text-container  closed-modal');
     const [textIsOpen, setTextIsOpen] = useState(false);
     const [mouseOnTeamBox, setMouseOnTeamBox] = useState(false);
     const [crossAnimationY, setCrossAnimationY] = useState({});
@@ -18,30 +20,76 @@ export function TeamSection() {
             closeText()
         }
     };
+    
 
-    const handleClickInside = () => {
-    };
+    // const resizeWindow = (event) => {
+    //     const modalY = textModal.current.getBoundingClientRect().top
+    //     // const modalEnd = textModal.current.offsetBot
+    //     const modalH = textModal.current.offsetHeight
+    //     const modalEnd = modalY + modalH
+    //     console.log('modalE',modalEnd);
 
-    useEffect(() => {
-        window.addEventListener('mousedown', handleClickOutside);
+    //     const teamBlockY = ref.current.getBoundingClientRect().top
+    //     const teamBlockH = ref.current.offsetHeight
+    //     const teamBlockEnd = teamBlockY + teamBlockH
+    //     console.log('teamBE',teamBlockEnd);
+
+    //     const diff = modalEnd - teamBlockEnd
+    //     // ref.style.marginBottom = diff + 50 + "px"
+    //     setMarginBottom(diff > 0 ? diff : 0);
+    //     // console.log(diff)
+    //     // console.log(textModal.current.node.clientHeight);
+    //     // const textModalHeight = textModal.current.node.getBoundingClientRect().height;
+    //     // console.log(textModalHeight);
+    // }
+
+    useLayoutEffect(() => {
+        function resizeWindow() {
+            const modalY = textModal.current.getBoundingClientRect().top
+            // const modalEnd = textModal.current.offsetBot
+            const modalH = textModal.current.offsetHeight
+            const modalEnd = modalY + modalH
+            console.log('modalE',modalEnd);
+    
+            const teamBlockY = ref.current.getBoundingClientRect().top
+            const teamBlockH = ref.current.offsetHeight
+            const teamBlockEnd = teamBlockY + teamBlockH
+            console.log('teamBE',teamBlockEnd);
+    
+            const diff = modalEnd - teamBlockEnd + 60
+            // ref.style.marginBottom = diff + 50 + "px"
+            setMarginBottom(diff > 0 ? diff : 0);
+            // console.log(diff)
+            // console.log(textModal.current.node.clientHeight);
+            // const textModalHeight = textModal.current.node.getBoundingClientRect().height;
+            // console.log(textModalHeight);
+        }
+
+        setTimeout(() => {
+            
+            resizeWindow()
+        }, 500);
+
+        window.addEventListener('resize', resizeWindow)
+        window.addEventListener('mousedown', handleClickOutside)
         return () => {
-          window.removeEventListener('mousedown', handleClickOutside);
+            window.removeEventListener('resize', resizeWindow)
+          window.removeEventListener('mousedown', handleClickOutside)
         };
-    }, []);
+    }, [ref]);
+
+    // useEffect(() => {
+    //     window.addEventListener('resize', resizeWindow)
+    //     window.addEventListener('mousedown', handleClickOutside)
+    //     return () => {
+    //         window.removeEventListener('resize', resizeWindow)
+    //       window.removeEventListener('mousedown', handleClickOutside)
+    //     };
+    // }, [ref, textModal]);
 
     const tl = gsap.timeline({paused: false})
 
     let init = false
-
-    // useEffect(() => {
-    //      document.getElementById('root').addEventListener('click', () => {
-    //         closeText()
-    //      } );
-    
-    //     return () => {
-    //         // document.getElementById('root').removeEventListener('click', closeText);
-    //     };
-    // }, []);
 
     const onEnter = ({ currentTarget }) => {
         setMouseOnTeamBox(false)
@@ -68,7 +116,7 @@ export function TeamSection() {
     const toggleText = () => {
         console.log("text is open", textIsOpen);
         if (textIsOpen) {
-            setTextClasses('team-text-container closed');
+            setTextClasses('team-text-container closed-modal');
             setCrossAnimationY({
                 animationName: 'cross-close-y',
                 animationDuration: '.3s',
@@ -101,7 +149,7 @@ export function TeamSection() {
 
     const closeText = () => {
         if (!textIsOpen) {
-            setTextClasses('team-text-container closed');
+            setTextClasses('team-text-container closed-modal');
             setCrossAnimationY({
                 animationName: 'cross-close-y',
                 animationDuration: '.3s',
@@ -118,7 +166,7 @@ export function TeamSection() {
     }
 
     return (
-        <section className={'team-section-container'}>
+        <section className={'team-section-container'} style={{ marginBottom: marginBottom }}>
             <h1 className={'team-header'}>TEAM</h1>
             <div className={'outer-team-img-container'} ref={ref} onClick={toggleText} onMouseEnter={onEnter} onMouseLeave={onLeave}>
                 <div className={'team-img-container'}>
@@ -136,7 +184,7 @@ export function TeamSection() {
                             <div className={'cross-x'} style={crossAnimationX}/>
                         </div>
                     </div>
-                    <div className={textClasses}>
+                    <div className={textClasses} ref={textModal}>
                         <p className={'team-text'}>
                             Pēteris Dimants, a Latvian volunteer who started helping Ukraine after the first
                             Russian attacks on Ukraine in 2014.<br/>

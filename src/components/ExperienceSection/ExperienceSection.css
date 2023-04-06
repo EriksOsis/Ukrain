@@ -1,38 +1,46 @@
 .experience-section {
     padding: 60px 0;
-    padding-top: 5vw;
+    padding-top: 8vw;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     position: relative;
+    padding-left: 3vw;
 }
 
 .flag-img {
     width: 10%;
+    display: none;
 }
 
 .experience-heading-container {
-    transform: translateX(-7.5%);
-    line-height: 250px;
-    padding-top: 12vw;
+    width: 100vw;
 }
 
 .experience-heading-container h1 {
-    font-size: 21vw;
+    font-size: 8vw;
     font-weight: 400;
-    letter-spacing: 10px;
-    line-height: 19.1vw;
+    letter-spacing: 0.1vw;
+    line-height: 9.1vw;
 }
 
 .experience-text-container {
+    position: relative;
+    width: 30.6vw;
+    padding-left: 3vw;
+    margin-left: 5.375vw;
+}
+
+.blue-wing {
+    height: 0%;
+    width: 0.76vw;
+    background-color: #245eac;
     position: absolute;
-    top: 42vw;
-    /* left: 53%; */
-    right: 4vw;
+    top: 0px;
+    left: 0px;
 }
 
 .experience-text {
-    /* font-size: 28px; */
     font-size: 1.5vw;
     line-height: 1.9vw;
 }

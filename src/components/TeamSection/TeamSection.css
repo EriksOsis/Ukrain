@@ -1,23 +1,28 @@
 .team-section-container {
     position: relative;
+    display: flex;
+    flex-direction: row;
     width: 100vw;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .team-header {
-    font-size: 300px;
+    font-size: 20.1vw;
     position: absolute;
-    top: 10%;
+    top: 3vw;
     left: 7.5%;
     z-index: 50;
     font-weight: 400;
 }
 
 .outer-team-img-container {
-    position: absolute;
-    top: 20%;
-    left: 45%;
+    margin-top: 10vw;
+    position: relative;
+    /* top: 20%; */
+    /* left: 45%; */
     width: 45%;
+    margin-right: 5vw;
+    margin-left: auto;
     cursor: pointer;
 }
 
@@ -85,6 +90,12 @@
 
 .team-text {
     color: #ededed;
+}
+
+.closed-modal {
+    /* display: none; */
+    /* visibility: hidden; */
+    opacity: 0;
 }
 
 .closed {
